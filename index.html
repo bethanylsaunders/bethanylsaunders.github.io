@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bethany Saunders | Software Engineer II </title>
-<meta name="description" content="Portfolio of Your Name: about, projects, resume and contact.">
+<title>Bethany Saunders | Software Engineer II</title>
+<meta name="description" content="Portfolio of Bethany Saunders: about, projects, resume and contact.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@ h3{font-size:1.2rem}
 
 nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:3.5rem}
-nav b{font-family:var(--head);font-size:1.1rem}
+nav .brand{font-family:var(--head);font-weight:700;font-size:1.1rem}
 nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
 .switch{position:relative;width:3.4rem;height:1.9rem;border-radius:1rem;border:1px solid var(--line);background:var(--tint);
   cursor:pointer;padding:0;flex:none;transition:background .2s}
@@ -46,7 +46,17 @@ nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
 .switch[aria-checked="true"] .sun{display:none}
 .switch[aria-checked="true"] .moon{display:block}
 nav .left{display:flex;align-items:center;gap:2rem}
-@media (prefers-reduced-motion:reduce){.switch,.switch .thumb{transition:none}}
+.to-top{position:fixed;right:1.25rem;bottom:1.25rem;width:3rem;height:3rem;border-radius:50%;border:0;padding:0;
+  background:var(--accent);color:var(--accent-ink);cursor:pointer;display:grid;place-items:center;
+  box-shadow:0 2px 10px rgba(0,0,0,.2);opacity:0;visibility:hidden;transform:translateY(.5rem);
+  transition:opacity .2s,transform .2s,visibility .2s;z-index:6}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top:hover{filter:brightness(1.1)}
+.to-top svg{width:1.3rem;height:1.3rem;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .switch,.switch .thumb,.to-top{transition:none}
+}
 nav a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem}
 nav a:hover{color:var(--accent)}
 
@@ -92,17 +102,17 @@ footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.9rem}
   .hero,.about-grid{grid-template-columns:1fr}
   .headshot{order:-1;max-width:14rem}
   nav ul{gap:1rem}
-  nav b{display:none}
+  nav .brand{display:none}
   nav .left{gap:1rem}
 }
 </style>
 </head>
-<body>
+<body id="top-of-page">
 
 <nav aria-label="Main">
   <div class="wrap">
     <div class="left">
-      <b>Bethany Saunders</b>
+      <a class="brand" href="#top-of-page" aria-label="Bethany Saunders, back to top">Bethany Saunders</a>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -124,14 +134,15 @@ footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.9rem}
   <header class="hero" id="top">
     <div>
       <h1>Hi, I'm Bethany.</h1>
-      <p>I'm a Software Engineer who [what you do, in one sentence]. Based in Austin, Texas.</p>
+      <p>I'm a Software Engineer who builds reliable data pipelines, automated reporting, and LLM tools. Based in Austin, Texas.</p>
       <div class="actions">
         <a class="btn" href="#projects">See my work</a>
         <a class="btn alt" href="#connect">Get in touch</a>
       </div>
     </div>
+    <!-- Add your headshot: save it as headshot.jpg in the same folder as this file -->
     <div class="headshot">
-      <img src="headshot.jpg" alt="Portrait of Bethany Saunders" onerror="this.remove();this.parentNode.textContent='YN'">
+      <img src="headshot.jpg" alt="Portrait of Bethany Saunders" onerror="this.remove();this.parentNode.textContent='BS'">
     </div>
   </header>
 </div>
@@ -142,32 +153,38 @@ footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.9rem}
     <h2>About me</h2>
     <div class="about-grid">
       <div class="lead">
-        <p>Write two or three sentences on who you are and what you do. Mention the kind of problems you enjoy solving and how you like to work.</p>
-        <p><strong>Interests:</strong> [e.g. data storytelling, accessibility, hiking, board games].</p>
-        <p><strong>Open to:</strong> [e.g. full-time roles in product analytics, freelance web projects, mentoring, speaking].</p>
+        <p>I'm a software engineer at Dell Technologies, where I design and optimize databases, build automated reporting, and develop LLM solutions. I like turning messy data problems into accurate, scalable workflows that people can trust.</p>
+        <p>Outside the code, I make videos that explain team projects and their business impact, and I care a lot about visual storytelling and design.</p>
+        <p><strong>Interests:</strong> data and analytics, video production, visual storytelling, UI/UX design.</p>
+        <p><strong>Open to:</strong> technical and creative roles that blend engineering, data, and design.</p>
       </div>
 
       <div>
         <h3>Skills</h3>
         <ul class="skills">
-          <li>Skill one</li><li>Skill two</li><li>Skill three</li>
-          <li>Skill four</li><li>Skill five</li><li>Skill six</li>
+          <li>SQL</li><li>Python</li><li>JavaScript</li><li>Angular</li>
+          <li>Power BI</li><li>DAX</li><li>SingleStore</li><li>Apache Spark</li>
+          <li>LLM solutions</li><li>MCP servers</li><li>DataRobot</li>
+          <li>GitLab CI/CD</li><li>API integration</li><li>Unit testing</li>
+          <li>Root cause analysis</li><li>Video production</li><li>UI/UX design</li>
         </ul>
 
         <h3>Education</h3>
         <ul class="timeline">
-          <li><strong>Degree, Major</strong><span>University Name · 2018–2022</span></li>
-          <li><strong>Certificate or course</strong><span>Institution · Year</span></li>
+          <li><strong>B.S. Computer Science, Minor in Mathematics</strong><span>New York University · May 2023</span></li>
+          <li><strong>Python certification</strong><span>Indian Institute of Hardware Technology · Oct 2023</span></li>
         </ul>
       </div>
 
       <div>
         <h3>Experience</h3>
         <ul class="timeline">
-          <li><strong>Job Title, Company</strong><span>2023 – Present</span>
-            <p>One line on what you owned and the result you delivered.</p></li>
-          <li><strong>Job Title, Company</strong><span>2021 – 2023</span>
-            <p>One line on what you owned and the result you delivered.</p></li>
+          <li><strong>Software Engineer II, Dell Technologies</strong><span>Feb 2025 – Present</span>
+            <p>Own database design and an automated SQL validator for the Install Base 360 data products, and build and deploy LLM solutions.</p></li>
+          <li><strong>Software Engineer I, Dell Technologies</strong><span>Feb 2023 – Jan 2025</span>
+            <p>Built Power BI dashboards and scorecards that replaced manual reporting for the Services Platform and Data teams.</p></li>
+          <li><strong>Engineering &amp; IT Intern, Dell Technologies</strong><span>2021 – 2022</span>
+            <p>Built a messaging app with micro-frontends and webhook APIs, launched in Dell's UX marketplace, and deployed scalable applications on the DataOps team.</p></li>
         </ul>
       </div>
     </div>
@@ -180,22 +197,19 @@ footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.9rem}
     <h2>Projects</h2>
     <div class="projects">
       <article class="project">
-        <h3>Project one</h3>
-        <p>What it is, who it's for, and the outcome. Two sentences is plenty.</p>
-        <small>HTML · CSS · JavaScript</small>
-        <a href="https://github.com/your-username/project-one">View on GitHub</a>
+        <h3>Reprint Bot</h3>
+        <p>A prototype system that recycles plastic bottles into 3D-printing material. I led the UI/UX design and deployed the model to an iOS app.</p>
+        <small>University project · UI/UX · iOS</small>
       </article>
       <article class="project">
-        <h3>Project two</h3>
-        <p>What it is, who it's for, and the outcome. Two sentences is plenty.</p>
-        <small>Python · SQL</small>
-        <a href="https://github.com/your-username/project-two">View on GitHub</a>
+        <h3>NYU Hyperloop</h3>
+        <p>Evaluated materials against size and load limits, ran structural-integrity calculations, and produced AutoCAD drafts.</p>
+        <small>University project · Engineering · AutoCAD</small>
       </article>
       <article class="project">
-        <h3>Project three</h3>
-        <p>What it is, who it's for, and the outcome. Two sentences is plenty.</p>
-        <small>Tools used</small>
-        <a href="https://example.com">View live demo</a>
+        <h3>Automated analytics at Dell</h3>
+        <p>An SQL validator that closes data ingestion gaps, plus dashboards and scorecards that replaced manual weekly reporting.</p>
+        <small>Dell Technologies · SQL · Power BI · Python</small>
       </article>
     </div>
   </div>
@@ -209,15 +223,19 @@ footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.9rem}
       <p>I'm happy to talk about roles, projects, or ideas. Grab my resume, find me on LinkedIn, or send a note.</p>
       <div class="actions">
         <a class="btn alt" href="resume.pdf" target="_blank" rel="noopener">Download resume</a>
-        <a class="btn alt" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="mailto:you@example.com?subject=Hello%20from%20your%20portfolio&body=Hi%20Your%20Name%2C%0A%0A">Email me</a>
+        <a class="btn alt" href="https://www.linkedin.com/in/bethany-saunders/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="mailto:bethanylsaunders99@gmail.com?subject=Hello%20from%20your%20portfolio&body=Hi%20Bethany%2C%0A%0A">Email me</a>
       </div>
     </div>
   </div>
 </section>
 </main>
 
-<footer>&copy; <span id="yr">2026</span> Your Name</footer>
+<button class="to-top" id="to-top" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<footer>&copy; <span id="yr">2026</span> Bethany Saunders</footer>
 <script>
 (function(){
   var root=document.documentElement,btn=document.getElementById('theme-toggle'),
@@ -232,6 +250,13 @@ footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.9rem}
   });
   mq.addEventListener('change',label);
   label();
+})();
+(function(){
+  var b=document.getElementById('to-top');
+  function check(){b.classList.toggle('show',window.scrollY>400)}
+  window.addEventListener('scroll',check,{passive:true});
+  b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+  check();
 })();
 document.getElementById('yr').textContent=new Date().getFullYear()</script>
 </body>
