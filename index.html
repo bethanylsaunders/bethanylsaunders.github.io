@@ -13,13 +13,13 @@ try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribu
 </script>
 <style>
 :root{
-  --bg:#FFFFFF; --surface:#FFF6F8; --ink:#4A2E33; --muted:#8A5A64; --accent:#B4536F; --accent-ink:#FFFFFF; --line:#F3CDD6; --tint:#FADCE3; --panel:#F2E5C4; --dot:#F6B7C5;
+  --bg:#FFFFFF; --surface:#FFF6F8; --ink:#4A2E33; --muted:#8A5A64; --accent:#B4536F; --accent-ink:#FFFFFF; --line:#F3CDD6; --tint:#FADCE3; --panel:#F2E5C4; --dot:#F6B7C5; --staff:#EBC0CB; --cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 48' width='20' height='40'%3E%3Cg fill='none' stroke='%23B4536F' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.5 42.8C9.5 46 13.6 46 13.4 42.6L12.6 17C12.6 9 14.8 5 15.6 2.2C17.8 5 17.2 11 12.6 17C8 22.5 5.8 27 8.2 31.2C10.6 35.4 17.6 34 17.8 29.4C18 25 14 23.4 11.6 25.6C9.8 27.4 10.6 30.2 13 30'/%3E%3C/g%3E%3Ccircle cx='9.9' cy='42.9' r='1.6' fill='%23B4536F'/%3E%3C/svg%3E") 8 2,auto; --staff:#EBC0CB; --cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 48' width='20' height='40'%3E%3Cg fill='none' stroke='%23B4536F' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.5 42.8C9.5 46 13.6 46 13.4 42.6L12.6 17C12.6 9 14.8 5 15.6 2.2C17.8 5 17.2 11 12.6 17C8 22.5 5.8 27 8.2 31.2C10.6 35.4 17.6 34 17.8 29.4C18 25 14 23.4 11.6 25.6C9.8 27.4 10.6 30.2 13 30'/%3E%3C/g%3E%3Ccircle cx='9.9' cy='42.9' r='1.6' fill='%23B4536F'/%3E%3C/svg%3E") 8 2,auto;
   --serif:'Cormorant Garamond',Georgia,serif; --head:'Rethink Sans',system-ui,sans-serif; --body:'Rethink Sans',system-ui,sans-serif;
 }
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){--bg:#2A1A1D; --surface:#35222A; --ink:#FBEAEE; --muted:#D9AEB9; --accent:#F6B7C5; --accent-ink:#2A1A1D; --line:#553640; --tint:#4A2B37; --panel:#4A3038; --dot:#F6B7C5; color-scheme:dark;}
+  :root:not([data-theme="light"]){--bg:#2A1A1D; --surface:#35222A; --ink:#FBEAEE; --muted:#D9AEB9; --accent:#F6B7C5; --accent-ink:#2A1A1D; --line:#553640; --tint:#4A2B37; --panel:#4A3038; --dot:#F6B7C5; --staff:#6B4652; --cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 48' width='20' height='40'%3E%3Cg fill='none' stroke='%23F6B7C5' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.5 42.8C9.5 46 13.6 46 13.4 42.6L12.6 17C12.6 9 14.8 5 15.6 2.2C17.8 5 17.2 11 12.6 17C8 22.5 5.8 27 8.2 31.2C10.6 35.4 17.6 34 17.8 29.4C18 25 14 23.4 11.6 25.6C9.8 27.4 10.6 30.2 13 30'/%3E%3C/g%3E%3Ccircle cx='9.9' cy='42.9' r='1.6' fill='%23F6B7C5'/%3E%3C/svg%3E") 8 2,auto; color-scheme:dark;}
 }
-:root[data-theme="dark"]{--bg:#2A1A1D; --surface:#35222A; --ink:#FBEAEE; --muted:#D9AEB9; --accent:#F6B7C5; --accent-ink:#2A1A1D; --line:#553640; --tint:#4A2B37; --panel:#4A3038; --dot:#F6B7C5; color-scheme:dark;}
+:root[data-theme="dark"]{--bg:#2A1A1D; --surface:#35222A; --ink:#FBEAEE; --muted:#D9AEB9; --accent:#F6B7C5; --accent-ink:#2A1A1D; --line:#553640; --tint:#4A2B37; --panel:#4A3038; --dot:#F6B7C5; --staff:#6B4652; --cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 48' width='20' height='40'%3E%3Cg fill='none' stroke='%23F6B7C5' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.5 42.8C9.5 46 13.6 46 13.4 42.6L12.6 17C12.6 9 14.8 5 15.6 2.2C17.8 5 17.2 11 12.6 17C8 22.5 5.8 27 8.2 31.2C10.6 35.4 17.6 34 17.8 29.4C18 25 14 23.4 11.6 25.6C9.8 27.4 10.6 30.2 13 30'/%3E%3C/g%3E%3Ccircle cx='9.9' cy='42.9' r='1.6' fill='%23F6B7C5'/%3E%3C/svg%3E") 8 2,auto; color-scheme:dark;}
 :root[data-theme="light"]{color-scheme:light}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
@@ -105,6 +105,23 @@ section{padding:4.5rem 0}
 .connect p{color:var(--ink)}
 .connect .btn.alt{color:var(--ink);border-color:var(--ink)}
 .connect .btn:not(.alt){background:var(--ink);border-color:var(--ink);color:var(--panel)}
+
+html,body,a,button,.switch,.btn,.to-top{cursor:var(--cursor)}
+
+/* sheet music staff dividers */
+.staff{position:relative;height:3.6rem;
+  background:repeating-linear-gradient(to bottom,var(--staff) 0 1px,transparent 1px .5rem) 0 .8rem/100% calc(2rem + 1px) no-repeat;
+  border-right:2px solid var(--staff)}
+.staff::before,.staff::after{content:"";position:absolute;background:var(--accent)}
+.staff::before{left:.4rem;top:-.1rem;width:1.6rem;height:3.8rem;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 48'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.5 42.8C9.5 46 13.6 46 13.4 42.6L12.6 17C12.6 9 14.8 5 15.6 2.2C17.8 5 17.2 11 12.6 17C8 22.5 5.8 27 8.2 31.2C10.6 35.4 17.6 34 17.8 29.4C18 25 14 23.4 11.6 25.6C9.8 27.4 10.6 30.2 13 30'/%3E%3C/g%3E%3Ccircle cx='9.9' cy='42.9' r='1.6' fill='%23000'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 48'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.5 42.8C9.5 46 13.6 46 13.4 42.6L12.6 17C12.6 9 14.8 5 15.6 2.2C17.8 5 17.2 11 12.6 17C8 22.5 5.8 27 8.2 31.2C10.6 35.4 17.6 34 17.8 29.4C18 25 14 23.4 11.6 25.6C9.8 27.4 10.6 30.2 13 30'/%3E%3C/g%3E%3Ccircle cx='9.9' cy='42.9' r='1.6' fill='%23000'/%3E%3C/svg%3E") center/contain no-repeat}
+.staff::after{left:3.5rem;top:.3rem;width:12rem;height:3rem;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 48'%3E%3Cellipse cx='14' cy='32' rx='5.2' ry='3.7' transform='rotate%28-22 14 32%29' fill='%23000'/%3E%3Cpath d='M18.6 32V10' stroke='%23000' stroke-width='1.4' fill='none'/%3E%3Cellipse cx='40' cy='24' rx='5.2' ry='3.7' transform='rotate%28-22 40 24%29' fill='%23000'/%3E%3Cpath d='M44.6 24V2' stroke='%23000' stroke-width='1.4' fill='none'/%3E%3Cellipse cx='66' cy='16' rx='5.2' ry='3.7' transform='rotate%28-22 66 16%29' fill='%23000'/%3E%3Cpath d='M61.4 16V38' stroke='%23000' stroke-width='1.4' fill='none'/%3E%3Cellipse cx='92' cy='24' rx='5.2' ry='3.7' transform='rotate%28-22 92 24%29' fill='%23000'/%3E%3Cpath d='M96.6 24V2' stroke='%23000' stroke-width='1.4' fill='none'/%3E%3Cellipse cx='118' cy='32' rx='5.2' ry='3.7' transform='rotate%28-22 118 32%29' fill='%23000'/%3E%3Cpath d='M122.6 32V10' stroke='%23000' stroke-width='1.4' fill='none'/%3E%3Cellipse cx='140' cy='28' rx='5.2' ry='3.7' transform='rotate%28-22 140 28%29' fill='%23000'/%3E%3Cpath d='M144.6 28V6' stroke='%23000' stroke-width='1.4' fill='none'/%3E%3Cpath d='M122.6 10L144.6 6' stroke='%23000' stroke-width='3.4' fill='none'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 48'%3E%3Cellipse cx='14' cy='32' rx='5.2' ry='3.7' transform='rotate%28-22 14 32%29' fill='%23000'/%3E%3Cpath d='M18.6 32V10' stroke='%23000' stroke-width='1.4' fill='none'/%3E%3Cellipse cx='40' cy='24' rx='5.2' ry='3.7' transform='rotate%28-22 40 24%29' fill='%23000'/%3E%3Cpath d='M44.6 24V2' stroke='%23000' stroke-width='1.4' fill='none'/%3E%3Cellipse cx='66' cy='16' rx='5.2' ry='3.7' transform='rotate%28-22 66 16%29' fill='%23000'/%3E%3Cpath d='M61.4 16V38' stroke='%23000' stroke-width='1.4' fill='none'/%3E%3Cellipse cx='92' cy='24' rx='5.2' ry='3.7' transform='rotate%28-22 92 24%29' fill='%23000'/%3E%3Cpath d='M96.6 24V2' stroke='%23000' stroke-width='1.4' fill='none'/%3E%3Cellipse cx='118' cy='32' rx='5.2' ry='3.7' transform='rotate%28-22 118 32%29' fill='%23000'/%3E%3Cpath d='M122.6 32V10' stroke='%23000' stroke-width='1.4' fill='none'/%3E%3Cellipse cx='140' cy='28' rx='5.2' ry='3.7' transform='rotate%28-22 140 28%29' fill='%23000'/%3E%3Cpath d='M144.6 28V6' stroke='%23000' stroke-width='1.4' fill='none'/%3E%3Cpath d='M122.6 10L144.6 6' stroke='%23000' stroke-width='3.4' fill='none'/%3E%3C/svg%3E") center/contain no-repeat}
+.staff.end{border-right:0}
+.staff.end::before{}
+.staff-wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+@media (max-width:700px){.staff::after{width:9rem}}
+
 footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.9rem}
 
 @media (max-width:700px){
@@ -156,6 +173,8 @@ footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.9rem}
   </header>
 </div>
 
+<div class="staff-wrap"><div class="staff" aria-hidden="true"></div></div>
+
 <!-- ABOUT -->
 <section id="about">
   <div class="wrap">
@@ -200,6 +219,8 @@ footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.9rem}
   </div>
 </section>
 
+<div class="staff-wrap"><div class="staff" aria-hidden="true"></div></div>
+
 <!-- PROJECTS -->
 <section id="projects">
   <div class="wrap">
@@ -223,6 +244,8 @@ footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.9rem}
     </div>
   </div>
 </section>
+
+<div class="staff-wrap"><div class="staff" aria-hidden="true"></div></div>
 
 <!-- RESUME + CONNECT -->
 <section id="connect">
