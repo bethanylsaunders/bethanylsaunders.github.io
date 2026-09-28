@@ -1,10 +1,239 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Personal Website</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name | Your Title</title>
+<meta name="description" content="Portfolio of Your Name: about, projects, resume and contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}
+</script>
+<style>
+:root{
+  --bg:#FFF1E7; --surface:#FFF9F4; --ink:#5F2F06; --muted:#75200A; --accent:#75200A; --accent-ink:#FFF1E7; --line:#E6B8B3; --tint:#F7DAD2; --dot:#B77269;
+  --head:'Rethink Sans',system-ui,sans-serif; --body:'Rethink Sans',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#2A1409; --surface:#361D10; --ink:#FFF1E7; --muted:#E6B8B3; --accent:#E6B8B3; --accent-ink:#2A1409; --line:#5F2F06; --tint:#4A2721; --dot:#E6B8B3; color-scheme:dark;}
+}
+:root[data-theme="dark"]{--bg:#2A1409; --surface:#361D10; --ink:#FFF1E7; --muted:#E6B8B3; --accent:#E6B8B3; --accent-ink:#2A1409; --line:#5F2F06; --tint:#4A2721; --dot:#E6B8B3; color-scheme:dark;}
+:root[data-theme="light"]{color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 var(--body)}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:var(--head);font-weight:700;line-height:1.15;margin:0}
+h2{font-size:2rem;margin-bottom:1.5rem}
+h3{font-size:1.2rem}
+
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:3.5rem}
+nav b{font-family:var(--head);font-size:1.1rem}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+.switch{position:relative;width:3.4rem;height:1.9rem;border-radius:1rem;border:1px solid var(--line);background:var(--tint);
+  cursor:pointer;padding:0;flex:none;transition:background .2s}
+.switch:hover{border-color:var(--accent)}
+.switch .thumb{position:absolute;top:.2rem;left:.2rem;width:1.4rem;height:1.4rem;border-radius:50%;background:var(--accent);
+  display:grid;place-items:center;transition:transform .2s}
+.switch[aria-checked="true"] .thumb{transform:translateX(1.5rem)}
+.switch svg{width:.9rem;height:.9rem;fill:var(--accent-ink)}
+.switch .moon{display:none}
+.switch[aria-checked="true"] .sun{display:none}
+.switch[aria-checked="true"] .moon{display:block}
+nav .left{display:flex;align-items:center;gap:2rem}
+@media (prefers-reduced-motion:reduce){.switch,.switch .thumb{transition:none}}
+nav a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--accent)}
+
+section{padding:4.5rem 0}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:center;padding:4rem 0 5rem}
+.hero h1{font-size:clamp(2.6rem,6vw,4.2rem);letter-spacing:-.02em}
+.hero p{font-size:1.2rem;color:var(--muted);max-width:32rem;margin:1.25rem 0 1.75rem}
+.headshot{width:100%;max-width:22rem;aspect-ratio:4/5;justify-self:center;border-radius:11rem 11rem 1rem 1rem;
+  background:var(--tint);overflow:hidden;display:grid;place-items:center;font:700 4rem var(--head);color:var(--accent)}
+.headshot img{width:100%;height:100%;object-fit:cover;display:block}
+
+.btn{display:inline-block;padding:.75rem 1.4rem;border-radius:.5rem;font:600 1rem var(--body);text-decoration:none;
+  background:var(--accent);color:var(--accent-ink);border:2px solid var(--accent);cursor:pointer}
+.btn:hover{filter:brightness(1.1)}
+.btn.alt{background:transparent;color:var(--accent)}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.about-grid h3{margin:2rem 0 .75rem}
+.about-grid h3:first-child{margin-top:0}
+.lead{grid-column:1/-1;max-width:44rem}
+.lead p{margin:0 0 1rem}
+.skills{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:0}
+.skills li{background:var(--tint);padding:.3rem .8rem;border-radius:2rem;font-size:.95rem;font-weight:500}
+.timeline{list-style:none;padding:0;margin:0;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 1.5rem 1.4rem}
+.timeline li::before{content:"";position:absolute;left:-.45rem;top:.5rem;width:.75rem;height:.75rem;border-radius:50%;background:var(--dot)}
+.timeline span{display:block;color:var(--muted);font-size:.9rem}
+.timeline p{margin:.3rem 0 0}
+
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.5rem}
+.project{background:var(--surface);border:1px solid var(--line);border-radius:.75rem;padding:1.5rem;display:flex;flex-direction:column}
+.project p{color:var(--muted);margin:.6rem 0 1rem;flex:1}
+.project small{color:var(--muted);display:block;margin-bottom:.75rem}
+.project a{font-weight:600}
+
+.connect{background:var(--tint);border-radius:1rem;padding:3rem 2rem;text-align:center}
+.connect p{max-width:30rem;margin:0 auto 1.5rem;color:var(--muted)}
+.connect .actions{justify-content:center}
+footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.9rem}
+
+@media (max-width:700px){
+  .hero,.about-grid{grid-template-columns:1fr}
+  .headshot{order:-1;max-width:14rem}
+  nav ul{gap:1rem}
+  nav b{display:none}
+  nav .left{gap:1rem}
+}
+</style>
 </head>
 <body>
-    <h1>Welcome to my website!</h1>
-    <p>This site is hosted using GitHub Pages.</p>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <div class="left">
+      <b>Your Name</b>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#connect">Connect</a></li>
+      </ul>
+    </div>
+    <button class="switch" id="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Dark mode">
+      <span class="thumb">
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="var(--accent-ink)" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 13.5A9 9 0 1 1 10.5 3a7 7 0 0 0 10.5 10.5z"/></svg>
+      </span>
+    </button>
+  </div>
+</nav>
+
+<main>
+<!-- INTRO -->
+<div class="wrap">
+  <header class="hero" id="top">
+    <div>
+      <h1>Hi, I'm Your Name.</h1>
+      <p>I'm a [your role] who [what you do, in one sentence]. Based in [City, State].</p>
+      <div class="actions">
+        <a class="btn" href="#projects">See my work</a>
+        <a class="btn alt" href="#connect">Get in touch</a>
+      </div>
+    </div>
+    <!-- Add your headshot: save it as headshot.jpg in the same folder as this file -->
+    <div class="headshot">
+      <img src="headshot.jpg" alt="Portrait of Your Name" onerror="this.remove();this.parentNode.textContent='YN'">
+    </div>
+  </header>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <h2>About me</h2>
+    <div class="about-grid">
+      <div class="lead">
+        <p>Write two or three sentences on who you are and what you do. Mention the kind of problems you enjoy solving and how you like to work.</p>
+        <p><strong>Interests:</strong> [e.g. data storytelling, accessibility, hiking, board games].</p>
+        <p><strong>Open to:</strong> [e.g. full-time roles in product analytics, freelance web projects, mentoring, speaking].</p>
+      </div>
+
+      <div>
+        <h3>Skills</h3>
+        <ul class="skills">
+          <li>Skill one</li><li>Skill two</li><li>Skill three</li>
+          <li>Skill four</li><li>Skill five</li><li>Skill six</li>
+        </ul>
+
+        <h3>Education</h3>
+        <ul class="timeline">
+          <li><strong>Degree, Major</strong><span>University Name · 2018–2022</span></li>
+          <li><strong>Certificate or course</strong><span>Institution · Year</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Experience</h3>
+        <ul class="timeline">
+          <li><strong>Job Title, Company</strong><span>2023 – Present</span>
+            <p>One line on what you owned and the result you delivered.</p></li>
+          <li><strong>Job Title, Company</strong><span>2021 – 2023</span>
+            <p>One line on what you owned and the result you delivered.</p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <div class="projects">
+      <article class="project">
+        <h3>Project one</h3>
+        <p>What it is, who it's for, and the outcome. Two sentences is plenty.</p>
+        <small>HTML · CSS · JavaScript</small>
+        <a href="https://github.com/your-username/project-one">View on GitHub</a>
+      </article>
+      <article class="project">
+        <h3>Project two</h3>
+        <p>What it is, who it's for, and the outcome. Two sentences is plenty.</p>
+        <small>Python · SQL</small>
+        <a href="https://github.com/your-username/project-two">View on GitHub</a>
+      </article>
+      <article class="project">
+        <h3>Project three</h3>
+        <p>What it is, who it's for, and the outcome. Two sentences is plenty.</p>
+        <small>Tools used</small>
+        <a href="https://example.com">View live demo</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME + CONNECT -->
+<section id="connect">
+  <div class="wrap">
+    <div class="connect">
+      <h2>Let's connect</h2>
+      <p>I'm happy to talk about roles, projects, or ideas. Grab my resume, find me on LinkedIn, or send a note.</p>
+      <div class="actions">
+        <a class="btn alt" href="resume.pdf" target="_blank" rel="noopener">Download resume</a>
+        <a class="btn alt" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="mailto:you@example.com?subject=Hello%20from%20your%20portfolio&body=Hi%20Your%20Name%2C%0A%0A">Email me</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>&copy; <span id="yr">2026</span> Your Name</footer>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme-toggle'),
+      mq=window.matchMedia('(prefers-color-scheme: dark)');
+  function current(){return root.getAttribute('data-theme')||(mq.matches?'dark':'light')}
+  function label(){btn.setAttribute('aria-checked',current()==='dark')}
+  btn.addEventListener('click',function(){
+    var next=current()==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next)}catch(e){}
+    label();
+  });
+  mq.addEventListener('change',label);
+  label();
+})();
+document.getElementById('yr').textContent=new Date().getFullYear()</script>
 </body>
 </html>
