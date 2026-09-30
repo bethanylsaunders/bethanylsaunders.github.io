@@ -302,11 +302,18 @@ footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.9rem}
       mq=window.matchMedia('(prefers-color-scheme: dark)');
   function current(){return root.getAttribute('data-theme')||(mq.matches?'dark':'light')}
   function label(){btn.setAttribute('aria-checked',current()==='dark')}
+  function refreshCursor(){
+    // forces the browser to redraw the custom cursor immediately after a theme switch
+    document.body.style.cursor='none';
+    void document.body.offsetHeight;
+    document.body.style.cursor='';
+  }
   btn.addEventListener('click',function(){
     var next=current()==='dark'?'light':'dark';
     root.setAttribute('data-theme',next);
     try{localStorage.setItem('theme',next)}catch(e){}
     label();
+    refreshCursor();
   });
   mq.addEventListener('change',label);
   label();
