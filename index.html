@@ -93,7 +93,12 @@ section{padding:4.5rem 0}
 .about-grid h3{margin:2rem 0 .75rem}
 .about-grid h3:first-child{margin-top:0}
 .lead{grid-column:1/-1;max-width:44rem}
+.lead-intro{font-family:var(--serif);font-style:italic;font-weight:600;font-size:1.7rem;line-height:1.35;color:var(--accent);margin:0 0 1.2rem}
 .lead p{margin:0 0 1rem}
+.lead .label{display:block;font-family:var(--serif);font-style:italic;font-weight:700;font-size:1rem;letter-spacing:.04em;color:var(--accent);margin-bottom:.2rem}
+.rest-divider{display:block;width:.6rem;height:1.7rem;margin:1.1rem auto .6rem;background:var(--accent);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 32'%3E%3Cpath d='M11 2L14 10 7 16 13 22C13 22 9 25 6 25.5 3.8 25.9 3.8 29 6.5 29.6 8.8 30.1 10 27.9 9 26.5' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 32'%3E%3Cpath d='M11 2L14 10 7 16 13 22C13 22 9 25 6 25.5 3.8 25.9 3.8 29 6.5 29.6 8.8 30.1 10 27.9 9 26.5' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
 .skills{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:0}
 .skills li{background:#F6B7C5;color:#4A2E33;padding:.3rem .8rem;border-radius:2rem;font-size:.95rem;font-weight:500}
 .skills li:nth-child(3n+2){background:#F2E5C4}
@@ -174,6 +179,7 @@ footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.9rem}
     <div>
       <h1>Hi, I'm Bethany.</h1>
       <p>I am a Software Engineer who builds reliable data pipelines, automated reporting, and LLM tools. Based in Austin, Texas.</p>
+      <p class="lead-intro">I build at the intersection of technology, data, and creative expression.</p>
       <div class="actions">
         <a class="btn" href="#projects">See my work</a>
         <a class="btn alt" href="#connect">Get in touch</a>
@@ -194,10 +200,13 @@ footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.9rem}
     <h2>About me</h2>
     <div class="about-grid">
       <div class="lead">
-        <p>I'm a software engineer with roots in the arts. Originally from Atlanta, Georgia, I grew up immersed in music, and I bring that same care for craft to my work today: designing and optimizing databases, building automated reporting, and developing LLM solutions. I like turning messy data problems into accurate, scalable workflows that people can trust, the same way a good song or a good story only works when every part is intentional.</p>
-        <p>Outside the code, I bring team projects and their business impact to life through video presentations with an emphasis on compelling visual storytelling and intentional design. When I'm not working, you'll usually find me at a concert, singing, or journaling.</p>
-        <p><strong>Interests:</strong> music, singing, journaling, live concerts, visual storytelling, UI/UX design.</p>
-        <p><strong>Open to:</strong> technical and creative roles that blend engineering, data, and design.</p>
+        <p>Originally from Atlanta, Georgia, I grew up immersed in music, and I bring that same appreciation for creativity, craft, and intention to my work today—designing and optimizing databases, building automated reporting workflows, and developing LLM solutions.</p>
+        <p>I enjoy turning complex data challenges into accurate, scalable systems that people can trust. To me, good engineering is a lot like good music or storytelling: every part has a purpose, and the details matter.</p>
+        <p>When I'm not working, you'll probably find me at a concert, singing karaoke, journaling, or on a random side quest around the city.</p>
+        <span class="rest-divider" aria-hidden="true"></span>
+        <p><strong class="label">Interests</strong> data and analytics, LLM solutions, UI/UX design, visual storytelling, live music, journaling.</p>
+        <span class="rest-divider" aria-hidden="true"></span>
+        <p><strong class="label">Open to</strong> technical and creative roles that blend engineering, data, and design.</p>
       </div>
 
       <div>
